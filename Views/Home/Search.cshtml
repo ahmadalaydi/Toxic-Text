@@ -1,0 +1,17 @@
+﻿@model Detect_Toxic_Text.Models.Response
+
+<h1>Search</h1>
+
+<form asp-action="Search" method="post">
+    <label for="text">Text:</label>
+    <input type="text" id="text" name="Text" />
+    <input type="submit" value="Search" />
+</form>
+
+@if (Model != null)
+{
+    <h2>Results</h2>
+    <p>Processing Time: @Model.processing_time</p>
+    <p>Confidence Score: @Model.confidence_score</p>
+    <p>Result: @Model.result</p>
+}
